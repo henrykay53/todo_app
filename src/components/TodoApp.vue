@@ -104,11 +104,10 @@ export default {
     padding: 10px 60px;
     border-radius: 10px;
     border: 1px solid rgb(81, 216, 81);
-    transition: all 0.6s ease-in-out;
   }
 
   input[type="text"]:focus {
-    border: 1px solid gold;
+    border: 1px solid gold !important;
   }
 
   .submitBtn {
@@ -146,6 +145,42 @@ export default {
     padding: 10px 60px;
     border: none;
   }
+
+  /* Media query for mobile */
+  @media (max-width: 500px) {
+
+  
+    ul {
+      width: 100%;
+      
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 6px;
+     
+    }
+
+    .remove-todo {
+      font-size: 10px !important;
+      padding: 10px 10px !important;
+      margin-left: 100px !important;
+      margin-right: 10px !important;
+    }
+
+  }
+
+  /*/ Media query for tablets */
+  @media(min-width: 501px) and (max-width: 1024px) {
+
+    ul {
+      width: 100%;
+    }
+  }  
 
   .cursor {
     cursor: pointer;
