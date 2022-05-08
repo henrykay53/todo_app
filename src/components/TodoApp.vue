@@ -11,11 +11,14 @@
   <ul>
 
     <li v-for="(todo, index) in todos" :key="todo.id" class="cursor">
-      <h3 :class="{done: todo.done}" @click="toggleDone(todo)">{{todo.content}}</h3>
-      <button class="remove-todo" @click="removeTodo(index)">REMOVE TODO</button>
+      <h3  class="tasks" :class="{done: todo.done}" @click="toggleDone(todo)">{{todo.content}}</h3>
+
+      <div class="alg-self">
+        <button class="remove-todo" @click="removeTodo(index)">REMOVE TODO</button>
+      </div>
+
     </li>
   
-
   </ul>
 
   <span class="span-flex">
@@ -84,10 +87,7 @@ export default {
 }
 </script>
 
-
 <style>
-
-
 
   h1 {
     text-align: center;
@@ -101,13 +101,9 @@ export default {
   }
 
   input[type="text"] {
-    padding: 10px 60px;
+    padding: 10px 50px;
     border-radius: 10px;
     border: 1px solid rgb(81, 216, 81);
-  }
-
-  input[type="text"]:focus {
-    border: 1px solid gold !important;
   }
 
   .submitBtn {
@@ -123,7 +119,7 @@ export default {
 
   ul {
     padding-inline-start: 0;
-    width: 50%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -131,57 +127,27 @@ export default {
   li {
     display: flex;
     align-content: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background: grey;
     border-radius: 10px;
     font-size: 25px;
     margin: 30px 60px;
-    padding: 15px 0;
+    padding: 15px;
+  }
+
+  .tasks {
+    margin-left: 50px;
   }
 
   .remove-todo {
+    align-self: flex-end;
     background: rgb(235, 51, 51);
     border-radius: 10px;
     padding: 10px 60px;
     border: none;
   }
 
-  /* Media query for mobile */
-  @media (max-width: 500px) {
-
   
-    ul {
-      width: 100%;
-      
-    }
-
-    li {
-      display: flex;
-      align-items: center;
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 6px;
-     
-    }
-
-    .remove-todo {
-      font-size: 10px !important;
-      padding: 10px 10px !important;
-      margin-left: 100px !important;
-      margin-right: 10px !important;
-    }
-
-  }
-
-  /*/ Media query for tablets */
-  @media(min-width: 501px) and (max-width: 1024px) {
-
-    ul {
-      width: 100%;
-    }
-  }  
-
   .cursor {
     cursor: pointer;
   }
@@ -190,7 +156,6 @@ export default {
     text-decoration: line-through;
     color: black;
   }
-
 
   .span-flex {
     display: flex;
@@ -216,5 +181,46 @@ export default {
   .mark {
     background: rgb(81, 216, 81);
   }
+
+  /* Media query for mobile */
+
+  @media (max-width: 500px) {
+
+  
+    ul {
+      width: 100%;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+      padding: 10px;
+    
+    }
+
+    .tasks {
+      margin-left: 0;
+    }
+
+
+    .remove-todo {
+      padding: 10px; 
+    }
+
+  }
+
+  /* Media query for tablet */
+
+  @media(min-width: 501px) and (max-width: 1024px) {
+
+    ul {
+      width: 100%;
+    }
+  }  
+
 
 </style>
