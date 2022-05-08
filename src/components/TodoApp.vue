@@ -106,6 +106,10 @@ export default {
     border: 1px solid rgb(81, 216, 81);
   }
 
+  input:focus {
+    outline: none;
+  }
+
   .submitBtn {
     margin-left: 10px;
     background: rgb(81, 216, 81);
