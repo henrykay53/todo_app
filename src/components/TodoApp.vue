@@ -111,6 +111,7 @@ export default {
     background: rgb(81, 216, 81);
     border-radius: 10px;
     border: none;
+    color: black !important;
   }
 
   .submitBtn:hover {
@@ -131,6 +132,7 @@ export default {
     background: grey;
     border-radius: 10px;
     font-size: 25px;
+    color: black !important;
     margin: 30px 60px;
     padding: 15px;
   }
@@ -145,6 +147,7 @@ export default {
     border-radius: 10px;
     padding: 10px 60px;
     border: none;
+    color: black !important;
   }
 
   
@@ -176,10 +179,12 @@ export default {
   .remove {
     background: rgb(235, 51, 51);
     border: none;
+    color: black !important;
   }
 
   .mark {
     background: rgb(81, 216, 81);
+    color: black !important;
   }
 
   /* Media query for mobile */
@@ -209,6 +214,11 @@ export default {
 
     .remove-todo {
       padding: 10px; 
+      color: black !important;
+    }
+
+    .remove, .mark {
+      color: black !important;
     }
 
   }
